@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="KenQAEcommerce-framework" />
+        <module name="KenQAEcommerce-report" />
+        <module name="KenQAEcommerce-page-objects" />
+        <module name="KenQAEcommerce-model-class" />
+        <module name="KenQAEcommerce-regression-tests" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="15">
+      <module name="KenQAEcommerce-domain" target="1.15" />
+      <module name="KenQAEcommerce-model" target="1.15" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
