@@ -36,9 +36,11 @@ public class ProductListingPage extends BasePage {
     }
 
     public static void searchProductEbay(String product, String category) throws InterruptedException {
+    //Description: Open eBay and search for item "iphone", list of results added into Product array list
         driver.get("https://www.ebay.com.my");
         driver.findElement(By.id("gh-ac")).sendKeys(product);
 
+        //Category dropdown
         WebElement dropdown = driver.findElement(By.id("gh-cat"));
         Select selectCategory = new Select(dropdown);
         selectCategory.selectByVisibleText(category);
@@ -61,6 +63,7 @@ public class ProductListingPage extends BasePage {
     }
 
     public static void searchProductLazada(String product) throws InterruptedException {
+        //Description: Open Lazada and search for item "iphone", list of results added into Product array list
         driver.get("https://lazada.com.my");
         driver.findElement(By.id("q")).sendKeys(product);
         driver.findElement(By.id("q")).sendKeys(Keys.ENTER);
@@ -80,6 +83,7 @@ public class ProductListingPage extends BasePage {
             productModelList.add(productModel);
         }
 
+        //Sort the items by price in ascending order and add to productModelSortedList arraylist
         productModelList
                 .stream()
                 .sorted(

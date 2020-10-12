@@ -14,7 +14,10 @@ public class GenerateReport {
     static String basePath = new File("").getAbsolutePath();
 
     public static void printProductReport(WebDriver driver, List<ProductModelClass> productModelSortedList) throws IOException {
+    //Description: Generate the html file with the list of products provided
         PrintWriter pw = new PrintWriter(new FileWriter("product.html"));
+
+        //Define table column headers title
         pw.println(
                 "<TABLE " +
                         "BORDER cellspacing=\"0\" cellpadding=\"5\" style='font-family:\"Arial\", Arial, monospace; font-size:80%'>" +
@@ -26,6 +29,7 @@ public class GenerateReport {
                         "<TH style=\"width:5%\">URL" +
                         "</TR>");
 
+        //loop the list of products and display in each cell
         for (int i = 0; i < productModelSortedList.size(); i++) {
             pw.format("<TR ALIGN=LEFT>" +
                             "<TD>%1$s" +
@@ -42,7 +46,7 @@ public class GenerateReport {
 
         pw.println("</TABLE>");
         pw.close();
-        System.setProperty("webdriver.chrome.driver", "\\chromedriver.exe");
+
         driver.get(basePath + "\\product.html");
     }
 }
